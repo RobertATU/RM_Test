@@ -21,12 +21,16 @@ public class Employee {
     public void setNumber(String number) {
         if(number.length() == 12){this.number = number;}
         else {
-            throw new IllegalArgumentException("Number must be exactly 12 numbers long");
+            throw new IllegalArgumentException("Must be exactly 12 numbers long");
         }
 
     }
 
     public String getName() {
         return name;
+    }
+
+    public String getNumber() {
+        return number;
     }
 }

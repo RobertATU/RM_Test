@@ -24,6 +24,18 @@ class EmployeeTest {
         System.out.println(exMessage);
     }
 
+    @Test
+    void testNumber(){
+        Employee em = new Employee("Nathan","098765432112");
+        assertEquals("098765432112",em.getNumber());
+    }
+    @Test
+    void testNumberFail(){
+        Exception exMessage = assertThrows(IllegalArgumentException.class, () -> new Employee("Nathan","9865432112"));
+        assertEquals("Must be exactly 12 numbers long",exMessage.getMessage());
+        System.out.println(exMessage);
+    }
+
     @AfterEach
     void tearDown() {
     }
